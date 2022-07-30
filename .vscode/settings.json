@@ -1,0 +1,6 @@
+{
+  "files.exclude": {
+      "**/*.spec.ts": false,
+  },
+  "files.eol": "\n"
+}    

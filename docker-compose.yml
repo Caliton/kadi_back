@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  dev:
+    container_name: nestjs_api_dev
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 3000:3000
+      - 9229:9229
+    networks:
+      - nesjs-network
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    restart: unless-stopped
+    depends_on:
+      - mysql
+    environment:
+      - DB_USER=${DB_USER}
+      - DB_PASS=${DB_PASS}
+      - DB_NAME=${DB_NAME}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_DIALECT=${DB_DIALECT}
+      - NODE_ENV=${NODE_ENV}
+    command: sh -c './wait-for.sh ${DB_HOST}:${DB_PORT} -- node dist/main start'
+
+  mysql:
+    container_name: mysql
+    restart: always
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_PASS}
+      - MYSQL_USER=${DB_USER}
+      - MYSQL_PASSWORD=${DB_PASS}
+      - MYSQL_DATABASE=${DB_NAME}
+    ports:
+      - "3308:3306"
+    expose:
+      - '3306'
+    networks:
+      - nesjs-network
+    volumes:
+      - ./scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - myapp_mysql_data:/var/lib/mysql
+
+volumes:
+  myapp_mysql_data: null
+
+networks:
+  nesjs-network: null

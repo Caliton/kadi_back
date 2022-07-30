@@ -1,0 +1,206 @@
+
+### cachorro
+POST http://localhost:3000/api/vacationrequest/oi
+Content-Type: application/json
+
+{
+  "startDate": "2020-05-01",
+  "finalDate": "2020-05-20",
+  "startPeriod": "2019-10-01",
+  "requestUser": "2b797d47-f05f-4a24-89a3-caa6d24037a3",
+  "status": "requested",
+  "approvalUser": "73e96b14-db47-409c-8277-d07e1ba8c624"
+}
+
+
+
+
+
+
+
+
+### aloisio
+GET http://localhost:3000/api/user/b6727d52-f806-494f-9419-40b495c0c4a7
+
+
+
+### aloisio
+GET http://localhost:3000/api/period/696b530a-8f3e-4ab4-a01f-c0d392f967b7/collaborator/
+
+
+### aloisio
+GET http://localhost:3000/api/collaborator/696b530a-8f3e-4ab4-a01f-c0d392f967b7/vacationrequests/
+
+
+### aloisio
+GET http://localhost:3000/api/collaborator/696b530a-8f3e-4ab4-a01f-c0d392f967b7/vacationrequests/
+
+### andre
+GET http://localhost:3000/api/collaborator/2b797d47-f05f-4a24-89a3-caa6d24037a3/vacationrequests/
+
+
+### leticia
+GET http://localhost:3000/api/collaborator/455ecd05-1f73-4a8d-a277-200707badff6/vacationrequests/
+
+
+### jose
+GET http://localhost:3000/api/collaborator/128238c0-faf5-43f9-8925-4824b29ca57a/vacationrequests/
+
+
+###
+GET http://localhost:3000/api/collaborator/
+
+
+###
+GET http://localhost:3000/api/holiday/all/2021
+
+
+###
+GET http://localhost:3000/api/holiday/regional
+
+
+###
+GET http://localhost:3000/api/periodstatus/
+
+
+###
+GET http://localhost:3000/api/vacationrequest/
+
+
+###
+GET http://localhost:3000/api/user/
+
+
+
+###
+POST http://localhost:3000/api/collaborator/
+Content-Type: application/json
+
+{
+  "register": "9999",
+  "name": "Jandira",
+  "birthday": "1990-01-01",
+  "hiringdate": "2021-01-01"
+}
+
+
+###
+POST http://localhost:3000/api/vacationrequest/
+Content-Type: application/json
+
+{
+  "startDate": "2020-05-01",
+  "finalDate": "2020-05-20",
+  "startPeriod": "2019-10-01",
+  "requestUser": "2b797d47-f05f-4a24-89a3-caa6d24037a3",
+  "status": "requested",
+  "approvalUser": "73e96b14-db47-409c-8277-d07e1ba8c624"
+}
+
+###
+DELETE http://localhost:3000/api/user/191b32cd-9d07-4b84-abb4-dd35a636ea2f
+
+
+###
+POST http://localhost:3000/api/user
+Content-Type: application/json
+
+{
+    "login": "caliton",
+    "password": "123",
+    "collaboratorId": "0d4cb76e-27a7-4a5f-a2c6-d4e41842feec",
+    "role": "collaborator"
+}
+
+
+###
+POST http://localhost:3000/api/login
+Content-Type: application/json
+
+{
+    "login": "admin",
+    "password": "123"
+}
+
+###
+GET http://localhost:3000/api/test-auth
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU1MjM0YzJkLTlhZDAtNDQyNi04MTk1LTBhZDJmMTk1MmY1NiIsIm5hbWUiOiJDYWxpdG9uIE1hcmNvcyBHb27Dp2FsdmVzIEp1bmlvciIsInVzZXJuYW1lIjoiY2FsaXRvbiIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTYzNjUwNjUzMywiZXhwIjoxNjM2NTA2NTYzfQ.BHVY3_tiALxRJzUnrPJSz5_gSZUux32siokdTlsalPk
+
+
+
+###
+GET http://localhost:3000/api/profile
+
+###
+GET http://localhost:3000/api/role
+
+
+###
+GET http://localhost:3000/api/profile
+
+###
+GET http://localhost:3000/api/user
+
+
+
+POST http://localhost:3000/api/collaborator
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwibmFtZSI6IkNhbGl0b24iLCJ1c2VybmFtZSI6ImNhbGl0b24iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MzU3ODY4OTAsImV4cCI6MTYzNTc4NjkyMH0.yefywkQnVXF2M_Hwq6wpqrKAvcMsYdXhN4c7DoJcev8
+Content-Type: application/json
+
+{
+    "name": "Caliton",
+    "email": "caliton@mail.com",
+    "register": "123.456.789",
+    "birthday": "1996-06-03",
+    "hiringdate": "2018-10-01",
+    "departament": "76f54ee2-6e65-4ad8-89e4-1b0c79c77ef0",
+    "profile": "d7a21b23-a62e-4cd4-997b-4eca51096368",
+    "role": "2c9afceb-fd60-4330-9a90-0c3363003296"
+}
+
+
+
+###
+GET http://localhost:3000/api/globalsettings
+
+
+###
+POST http://localhost:3000/api/collaborator/import/
+Content-Type: application/json
+
+{
+  "data": [
+    {
+      "register": "243151",
+      "name": "Zoio",
+      "birthday": "2000-01-01",
+      "hiringdate": "2018-10-01",
+      "daysEnjoyed": 20,
+      "periodOk": 2018
+    },
+    {
+      "register": "243152",
+      "name": "Zebra",
+      "birthday": "2000-01-02",
+      "hiringdate": "2010-12-31",
+      "daysEnjoyed": 15,
+      "periodOk": 2019
+    },
+    {
+      "register": "243153",
+      "name": "Zema",
+      "birthday": "2000-01-03",
+      "hiringdate": "2010-01-03",
+      "daysEnjoyed": 10,
+      "periodOk": 2020
+    },
+    {
+      "register": "243154",
+      "name": "Zureta",
+      "birthday": "2000-01-04",
+      "hiringdate": "2019-08-01",
+      "daysEnjoyed": 20,
+      "periodOk": 2019
+    }
+  ]
+}
